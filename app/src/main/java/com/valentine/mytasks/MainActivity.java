@@ -4,6 +4,7 @@ import android.os.Bundle;
 import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
 
@@ -24,6 +25,17 @@ public class MainActivity extends ActionBarActivity {
         ParseAnalytics.trackAppOpened(getIntent());
         ParseObject.registerSubclass(Task.class);
     }
+
+    public void createTask(View v) {
+        if (mTaskInput.getText().length() > 0){
+            Task t = new Task();
+            t.setDescription(mTaskInput.getText().toString());
+            t.setCompleted(false);
+            t.saveEventually();
+            mTaskInput.setText("");
+        }
+    }
+
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
