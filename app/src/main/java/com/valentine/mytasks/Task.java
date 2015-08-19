@@ -16,6 +16,9 @@ public class Task extends ParseObject{
     public void setCompleted(boolean complete){
         put("completed", complete);
     }
+    public String getDescription(){
+        return getString("description");
+    }
 
 
 }
