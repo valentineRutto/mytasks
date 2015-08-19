@@ -19,6 +19,9 @@ public class Task extends ParseObject{
     public String getDescription(){
         return getString("description");
     }
+    public void setDescription(String description){
+        put("description", description);
+    }
 
 
 }
