@@ -13,6 +13,9 @@ public class Task extends ParseObject{
     public boolean isCompleted(){
         return getBoolean("completed");
     }
+    public void setCompleted(boolean complete){
+        put("completed", complete);
+    }
 
 
 }
