@@ -6,6 +6,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 
 import com.parse.Parse;
+import com.parse.ParseAnalytics;
 
 
 public class MainActivity extends ActionBarActivity {
@@ -16,6 +17,7 @@ public class MainActivity extends ActionBarActivity {
         setContentView(R.layout.activity_main);
 
         Parse.initialize(this, "APP_ID", "CLIENT_ID");
+        ParseAnalytics.trackAppOpened(getIntent());
     }
 
     @Override
