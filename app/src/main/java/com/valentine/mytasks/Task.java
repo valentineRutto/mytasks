@@ -9,6 +9,7 @@ import com.parse.ParseObject;
 @ParseClassName("Tasks")
 public class Task extends ParseObject{
     public Task(){
+
     }
     public boolean isCompleted(){
         return getBoolean("completed");
