@@ -14,16 +14,14 @@ import com.parse.ParseObject;
 
 
 public class MainActivity extends ActionBarActivity {
+
   EditText  mTaskInput = (EditText) findViewById(R.id.task_input);
-   ListView mListView = (ListView) findViewById(R.id.task_list);
-    @Override
+   ListView mListView ;
+
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        Parse.initialize(this, "bDrxYwWkcBY0kjqk8yh333FBXspyYUJDQIkvB7uf", "9Eh1b8QHjAczgfBHNcrzyy4sBXml6bocKd2TQ1W6");
-        ParseAnalytics.trackAppOpened(getIntent());
-        ParseObject.registerSubclass(Task.class);
     }
 
     public void createTask(View v) {

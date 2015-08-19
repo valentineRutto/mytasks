@@ -6,7 +6,7 @@ import com.parse.ParseObject;
 /**
  * Created by valentine on 8/19/15.
  */
-@ParseClassName("Tasks")
+@ParseClassName("Task")
 public class Task extends ParseObject{
     public Task(){
 
