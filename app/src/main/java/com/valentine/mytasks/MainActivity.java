@@ -1,26 +1,25 @@
 package com.valentine.mytasks;
 
+import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.app.ActionBarActivity;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.ListView;
 
-import com.parse.Parse;
-import com.parse.ParseAnalytics;
-import com.parse.ParseObject;
 
+public class MainActivity extends Activity {
 
-public class MainActivity extends ActionBarActivity {
-
-  EditText  mTaskInput = (EditText) findViewById(R.id.task_input);
-   ListView mListView ;
+  private EditText  mTaskInput ;
+   private ListView mListView ;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+
+ mTaskInput = (EditText) findViewById(R.id.task_input);
+        mListView = (ListView) findViewById(R.id.task_list);
 
     }
 

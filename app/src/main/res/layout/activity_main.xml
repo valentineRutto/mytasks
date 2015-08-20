@@ -16,7 +16,7 @@
         <EditText
             android:id="@+id/task_input"
             android:layout_width="0dp"
-            android:layout_height="102dp"
+            android:layout_height="50dp"
             android:layout_weight="1"
             android:ems="10"
             android:inputType="text"
@@ -29,7 +29,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="createTask"
-            android:text="Submit" />
+            android:text="Submit" android:layout_gravity="center_vertical"/>
+    </LinearLayout>
 
         <ListView
             android:id="@+id/task_list"
@@ -37,5 +38,6 @@
             android:layout_height="wrap_content" />
 
 
-    </LinearLayout>
+
+
     </LinearLayout>
