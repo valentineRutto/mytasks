@@ -20,7 +20,6 @@ public class MainActivity extends Activity {
 
  mTaskInput = (EditText) findViewById(R.id.task_input);
         mListView = (ListView) findViewById(R.id.task_list);
-
     }
 
     public void createTask(View v) {
