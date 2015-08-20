@@ -23,12 +23,12 @@ public class MainActivity extends Activity {
     }
 
     public void createTask(View v) {
-        if (mTaskInput.getText().length() > 0){
-            Task t = new Task();
-            t.setDescription(mTaskInput.getText().toString());
+        if (mTaskInput.getText().length() > 0){  //check if input is empty
+            Task t = new Task();//create a new task object
+            t.setDescription(mTaskInput.getText().toString()); //
             t.setCompleted(false);
-            t.saveEventually();
-            mTaskInput.setText("");
+            t.saveEventually(); //saves the tasks incase user is offline
+            mTaskInput.setText(""); //clears input
         }
     }
 
