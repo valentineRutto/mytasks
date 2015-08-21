@@ -2,6 +2,7 @@ package com.valentine.mytasks;
 
 import android.app.Activity;
 import android.os.Bundle;
+import android.support.v7.internal.widget.AdapterViewCompat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
@@ -9,7 +10,7 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 
-public class MainActivity extends Activity {
+public class MainActivity extends Activity implements AdapterViewCompat.OnItemClickListener {
 
   private EditText  mTaskInput ;
    private ListView mListView ;
@@ -18,19 +19,23 @@ public class MainActivity extends Activity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
- mTaskInput = (EditText) findViewById(R.id.task_input);
+        mTaskInput = (EditText) findViewById(R.id.task_input);
         mListView = (ListView) findViewById(R.id.task_list);
+
     }
 
-    public void createTask(View v) {
-        if (mTaskInput.getText().length() > 0){  //check if input is empty
-            Task t = new Task();//create a new task object
-            t.setDescription(mTaskInput.getText().toString()); //
-            t.setCompleted(false);
-            t.saveEventually(); //saves the tasks incase user is offline
-            mTaskInput.setText(""); //clears input
+        public void createTask(View v) {
+            if (mTaskInput.getText().length() > 0){  //check if input is empty
+                Task t = new Task();//create a new task object
+                t.setDescription(mTaskInput.getText().toString()); //
+                t.setCompleted(false);
+                t.saveEventually(); //saves the tasks incase user is offline
+                mTaskInput.setText(""); //clears input
+            }
         }
-    }
+
+
+
 
 
     @Override
@@ -53,5 +58,10 @@ public class MainActivity extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+
+    @Override
+    public void onItemClick(AdapterViewCompat<?> parent, View view, int position, long id) {
+
     }
 }
