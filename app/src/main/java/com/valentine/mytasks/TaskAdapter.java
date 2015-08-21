@@ -1,6 +1,9 @@
 package com.valentine.mytasks;
 
 import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ArrayAdapter;
 
 import java.util.List;
@@ -16,6 +19,11 @@ public class TaskAdapter extends ArrayAdapter<Task> {
         super(context, R.layout.task_row_item, objects);
         this.mContext = context;
         this.mTasks = objects;
+    }
+    public View getView(int position, View convertView, ViewGroup parent){
+        if(convertView == null){
+            LayoutInflater mLayoutInflater = LayoutInflater.from(mContext);
+            convertView = mLayoutInflater.inflate(R.layout.task_row_item, null);
+        }
 
     }
-}
