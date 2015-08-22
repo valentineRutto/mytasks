@@ -46,7 +46,7 @@ updateData();
                 mTaskInput.setText(""); //clears input
             }
         }
-    public void updateData(){
+    public void updateData(){// query Parse for all the Task objects, and return a list of them
         ParseQuery<Task> query = ParseQuery.getQuery(Task.class);
         query.findInBackground(new FindCallback<Task>() {
 
