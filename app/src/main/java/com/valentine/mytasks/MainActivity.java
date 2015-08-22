@@ -52,6 +52,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         }
     public void updateData(){// query Parse for all the Task objects, and return a list of them
         ParseQuery<Task> query = ParseQuery.getQuery(Task.class);
+        query.setCachePolicy(ParseQuery.CachePolicy.CACHE_THEN_NETWORK);
         query.findInBackground(new FindCallback<Task>() {
 
             @Override
