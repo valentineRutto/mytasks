@@ -8,6 +8,7 @@ import android.view.View;
 import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
+import android.widget.TextView;
 
 import com.parse.FindCallback;
 import com.parse.ParseException;
@@ -83,8 +84,10 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
 
         return super.onOptionsItemSelected(item);
     }
-
+@Override
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+    Task task = mAdapter.getItem(position);
+    TextView taskDescription = (TextView) view.findViewById(R.id.task_description);
 
     }
 }
