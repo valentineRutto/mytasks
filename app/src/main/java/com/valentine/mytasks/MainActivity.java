@@ -9,7 +9,12 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import com.parse.FindCallback;
+import com.parse.ParseException;
+import com.parse.ParseQuery;
+
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class MainActivity extends Activity implements AdapterView.OnItemClickListener {
@@ -41,6 +46,19 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
                 mTaskInput.setText(""); //clears input
             }
         }
+    public void updateData(){
+        ParseQuery<Task> query = ParseQuery.getQuery(Task.class);
+        query.findInBackground(new FindCallback<Task>() {
+
+            @Override
+            public void done(List<Task> tasks, ParseException error) {
+                if(tasks != null){
+                    mAdapter.clear();
+                    mAdapter.addAll(tasks);
+                }
+            }
+        });
+    }
 
 
 
