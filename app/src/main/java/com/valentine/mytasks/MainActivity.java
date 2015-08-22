@@ -33,8 +33,9 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         mAdapter = new TaskAdapter(this, new ArrayList<Task>());
         mListView.setAdapter(mAdapter);
 
-updateData();
+        updateData();
 
+        mListView.setOnItemClickListener(this);
     }
 
         public void createTask(View v) {
