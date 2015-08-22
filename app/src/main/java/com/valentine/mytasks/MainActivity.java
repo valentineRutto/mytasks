@@ -1,6 +1,7 @@
 package com.valentine.mytasks;
 
 import android.app.Activity;
+import android.graphics.Paint;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -90,5 +91,13 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
     TextView taskDescription = (TextView) view.findViewById(R.id.task_description);
 
     task.setCompleted(!task.isCompleted());
+
+
+    if(task.isCompleted()){
+        taskDescription.setPaintFlags(taskDescription.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);
+    }else{
+        taskDescription.setPaintFlags(taskDescription.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
     }
+
+}
 }
