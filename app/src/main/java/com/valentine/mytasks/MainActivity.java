@@ -98,6 +98,6 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
     }else{
         taskDescription.setPaintFlags(taskDescription.getPaintFlags() & (~Paint.STRIKE_THRU_TEXT_FLAG));
     }
-
+    task.saveEventually();
 }
 }
