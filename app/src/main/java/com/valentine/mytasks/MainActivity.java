@@ -9,6 +9,8 @@ import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
+import java.util.ArrayList;
+
 
 public class MainActivity extends Activity implements AdapterView.OnItemClickListener {
 
@@ -23,7 +25,8 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         mTaskInput = (EditText) findViewById(R.id.task_input);
         mListView = (ListView) findViewById(R.id.task_list);
 
-
+        mAdapter = new TaskAdapter(this, new ArrayList<Task>());
+        mListView.setAdapter(mAdapter);
 
 
 
