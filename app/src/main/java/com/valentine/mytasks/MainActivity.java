@@ -2,18 +2,19 @@ package com.valentine.mytasks;
 
 import android.app.Activity;
 import android.os.Bundle;
-import android.support.v7.internal.widget.AdapterViewCompat;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.EditText;
 import android.widget.ListView;
 
 
-public class MainActivity extends Activity implements AdapterViewCompat.OnItemClickListener {
+public class MainActivity extends Activity implements AdapterView.OnItemClickListener {
 
   private EditText  mTaskInput ;
    private ListView mListView ;
+    private TaskAdapter mAdapter;
 
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -21,6 +22,10 @@ public class MainActivity extends Activity implements AdapterViewCompat.OnItemCl
 
         mTaskInput = (EditText) findViewById(R.id.task_input);
         mListView = (ListView) findViewById(R.id.task_list);
+
+
+
+
 
     }
 
@@ -60,8 +65,7 @@ public class MainActivity extends Activity implements AdapterViewCompat.OnItemCl
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
-    public void onItemClick(AdapterViewCompat<?> parent, View view, int position, long id) {
+    public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
 
     }
 }
