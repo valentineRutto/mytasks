@@ -89,5 +89,6 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
     Task task = mAdapter.getItem(position);
     TextView taskDescription = (TextView) view.findViewById(R.id.task_description);
 
+    task.setCompleted(!task.isCompleted());
     }
 }
