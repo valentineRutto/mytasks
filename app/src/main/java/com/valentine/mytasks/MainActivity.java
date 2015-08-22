@@ -44,6 +44,7 @@ updateData();
                 t.setCompleted(false);
                 t.saveEventually(); //saves the tasks incase user is offline
                 mTaskInput.setText(""); //clears input
+                mAdapter.insert(t, 0);
             }
         }
     public void updateData(){// query Parse for all the Task objects, and return a list of them
@@ -59,10 +60,6 @@ updateData();
             }
         });
     }
-
-
-
-
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
