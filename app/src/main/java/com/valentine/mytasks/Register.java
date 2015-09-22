@@ -6,21 +6,24 @@ import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.EditText;
 
 import com.parse.ParseException;
 import com.parse.ParseUser;
 import com.parse.SignUpCallback;
 
 public class Register extends AppCompatActivity {
-mUSername
+    private EditText mUsernameField;
+    private EditText mPasswordField;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+
     }
-    public void register(final View v){
-        if(mUsernameField.getText().length() == 0 || mPasswordField.getText().length() == 0)
+    public void register(final View v) {
+        if (mUsernameField.getText().length() == 0 || mPasswordField.getText().length() == 0)
             return;
 
         v.setEnabled(false);
@@ -43,7 +46,7 @@ mUSername
             }
         });
 
-
+    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Inflate the menu; this adds items to the action bar if it is present.

@@ -14,6 +14,7 @@ import android.widget.TextView;
 import com.parse.FindCallback;
 import com.parse.ParseException;
 import com.parse.ParseQuery;
+import com.parse.ParseUser;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -53,6 +54,8 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
     public void updateData(){// query Parse for all the Task objects, and return a list of them
         ParseQuery<Task> query = ParseQuery.getQuery(Task.class);
         query.setCachePolicy(ParseQuery.CachePolicy.CACHE_THEN_NETWORK);
+        query.whereEqualTo("user", ParseUser.getCurrentUser());
+
         query.findInBackground(new FindCallback<Task>() {
 
             @Override
