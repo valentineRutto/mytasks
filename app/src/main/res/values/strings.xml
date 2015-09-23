@@ -5,5 +5,7 @@
     <string name="action_settings">Settings</string>
     <string name="title_activity_login">Login</string>
     <string name="title_activity_register">Register</string>
-    <string name="username">Username</string>
+    <string name="password_label">Username</string>
+    <string name="sign_in_label">LogIn</string>
+    <string name="dont_have_an_account_label">Dont have an account? Sign Up </string>
 </resources>

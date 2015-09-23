@@ -1,4 +1,4 @@
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
     android:layout_height="match_parent" android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -7,58 +7,63 @@
     tools:context="com.valentine.mytasks.Login">
 
 
-    <!-- A CardView that contains a TextView -->
-    <android.support.v7.widget.CardView
-        xmlns:card_view="http://schemas.android.com/apk/res-auto"
-        android:id="@+id/card_view"
-        android:layout_gravity="top"
+    <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:longClickable="true"
-        card_view:cardBackgroundColor="#F44336"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="center_vertical"
         android:orientation="vertical"
-        card_view:cardUseCompatPadding="true"
-        card_view:cardCornerRadius="4dp"
-        card_view:cardElevation="4dp"
-        card_view:contentPadding="10dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true">
-
+        tools:ignore="Suspicious0dp">
 
         <TextView
-        android:id="@+id/info_text2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hallo valentine"
-        android:layout_alignBaseline="@+id/info_text"
-        android:layout_alignBottom="@+id/info_text"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true" />
+            android:id="@+id/error_messages"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:textAppearance="?android:attr/textAppearanceMedium"
+            android:textColor="@color/red" />
 
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/username" />
 
-    <TextView
-        android:id="@+id/info_text"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:textColor="#FF4444"
-        android:textSize="24sp"
-        android:text="eeeeeeeeh"
-        android:layout_below="@+id/card_view"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="51dp" />
+        <EditText
+            android:id="@+id/login_username"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="100"
+            android:inputType="text" >
 
-    </android.support.v7.widget.CardView>
+            <requestFocus />
+        </EditText>
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@string/password_label" />
+
+        <EditText
+            android:id="@+id/login_password"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="100"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/sign_in"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="right"
+            android:onClick="signIn"
+            android:text="@string/sign_in_label" />
+    </LinearLayout>
 
     <Button
-        android:layout_width="wrap_content"
+        android:id="@+id/registerButton"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="New Button"
-        android:id="@+id/button"
-        android:layout_below="@+id/card_view"
-        android:layout_alignRight="@+id/card_view"
-        android:layout_alignEnd="@+id/card_view"
-        android:layout_marginRight="52dp"
-        android:layout_marginEnd="52dp" />
-</RelativeLayout>
+        android:onClick="showRegistration"
+        android:text="@string/dont_have_an_account_label" />
+
+</LinearLayout>
