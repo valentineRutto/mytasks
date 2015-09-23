@@ -7,6 +7,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.parse.ParseException;
 import com.parse.ParseUser;
@@ -41,8 +42,9 @@ public class Register extends AppCompatActivity {
                     startActivity(intent);
                     finish();
                 } else {
-                    // Sign up didn't succeed. Look at the ParseException
-                    // to figure out what went wrong
+                    Toast.makeText(getApplicationContext(),
+                            "username already taken ", Toast.LENGTH_LONG)
+                            .show();
                     v.setEnabled(true);
                 }
             }
