@@ -55,7 +55,6 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
         ParseQuery<Task> query = ParseQuery.getQuery(Task.class);
         query.setCachePolicy(ParseQuery.CachePolicy.CACHE_THEN_NETWORK);
         query.whereEqualTo("user", ParseUser.getCurrentUser());
-
         query.findInBackground(new FindCallback<Task>() {
 
             @Override
@@ -93,9 +92,7 @@ public class MainActivity extends Activity implements AdapterView.OnItemClickLis
     public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
     Task task = mAdapter.getItem(position);
     TextView taskDescription = (TextView) view.findViewById(R.id.task_description);
-
     task.setCompleted(!task.isCompleted());
-
 
     if(task.isCompleted()){
         taskDescription.setPaintFlags(taskDescription.getPaintFlags() | Paint.STRIKE_THRU_TEXT_FLAG);

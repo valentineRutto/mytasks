@@ -20,6 +20,8 @@ public class Register extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
+        mUsernameField = (EditText) findViewById(R.id.register_username);
+        mPasswordField = (EditText) findViewById(R.id.register_password);
 
     }
     public void register(final View v) {
