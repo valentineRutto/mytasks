@@ -7,6 +7,15 @@
     tools:context="com.valentine.mytasks.Login">
 
 
+    <Button
+        android:id="@+id/registerButton"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:onClick="showRegistration"
+        android:text="@string/dont_have_an_account_label"
+        android:background="#ff8c71"
+        android:textColor="#fff" />
+
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="0dp"
@@ -59,11 +68,11 @@
             android:text="@string/sign_in_label" />
     </LinearLayout>
 
-    <Button
-        android:id="@+id/registerButton"
-        android:layout_width="match_parent"
+    <ProgressBar
+        style="?android:attr/progressBarStyleLarge"
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:onClick="showRegistration"
-        android:text="@string/dont_have_an_account_label" />
+        android:id="@+id/progressBar"
+        android:layout_weight="1" />
 
 </LinearLayout>

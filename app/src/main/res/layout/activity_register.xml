@@ -51,7 +51,9 @@
                    android:layout_height="wrap_content"
                    android:layout_gravity="right"
                    android:onClick="register"
-                   android:text="Sign Up" />
+                   android:text="Sign Up"
+                   android:background="#ff8c71"
+                   android:textColor="#ffffff" />
            </LinearLayout>
 
            <Button
@@ -60,7 +62,9 @@
                android:layout_height="wrap_content"
                android:textSize="17sp"
                android:onClick="showLogin"
-               android:text="Already Have An Account? Log In!" />
+               android:text="Already Have An Account? Log In!"
+               android:textColor="#fff"
+               android:background="#ff8c71" />
 
 
    </LinearLayout>

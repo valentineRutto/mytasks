@@ -30,7 +30,9 @@
             android:layout_height="wrap_content"
             android:onClick="createTask"
             android:text="Submit"
-            android:layout_gravity="center_vertical"/>
+            android:layout_gravity="center_vertical"
+            android:background="#ff8c71"
+            android:textColor="#ffffff" />
     </LinearLayout>
 
         <ListView
